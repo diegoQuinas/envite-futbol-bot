@@ -7,9 +7,9 @@ from sqlalchemy import create_engine
 env = os.environ.get('ENV')
 match env:
     case 'dev':
-        print('DEVELOPEMENT BOT STARTING')
+        print('Developement bot starting')
     case 'prod':
-        print('PRODUCTION BOT STARTING')
+        print('Production bot starting')
 # Replace the connection string with your actual connection string
 connection_string = os.environ.get('DB_URL')
 
