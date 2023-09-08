@@ -5,11 +5,10 @@ import telebot
 from sqlalchemy import create_engine
 
 env = os.environ.get('ENV')
-match env:
-    case 'dev':
-        print('Developement bot starting')
-    case 'prod':
-        print('Production bot starting')
+if env == 'dev':
+    print('Development bot starting')
+elif env == 'prod':
+    print('Production bot starting')
 # Replace the connection string with your actual connection string
 connection_string = os.environ.get('DB_URL')
 
