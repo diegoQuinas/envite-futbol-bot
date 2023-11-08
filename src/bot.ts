@@ -1,4 +1,4 @@
-import { Bot, InlineKeyboard, webhookCallback } from 'grammy';
+import { Bot, InlineKeyboard, webhookCallback, Keyboard } from 'grammy';
 import express from 'express';
 import { applyTextEffect, Variant } from './textEffects';
 
@@ -143,9 +143,9 @@ for (const effect of allEffects) {
 }
 
 // Handle the /about command
-const aboutUrlKeyboard = new Keyboard().text("Yes, they certainly are").row()
-  .text("I'm not quite sure").row()
-  .text("No. 😈")
+const keyboard = new Keyboard()
+  .text("Yes").row()
+  .text("No")
   .resized();
 
 // Suggest commands in the menu
@@ -162,7 +162,7 @@ const introductionMessage = `Envite Futbol`;
 
 const replyWithIntro = (ctx: any) =>
   ctx.reply(introductionMessage, {
-    reply_markup: aboutUrlKeyboard,
+    reply_markup: keyboard,
   });
 bot.catch((ctx) => {
   console.log(ctx.message);
