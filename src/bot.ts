@@ -146,10 +146,7 @@ for (const effect of allEffects) {
 const aboutUrlKeyboard = new Keyboard().text("Yes, they certainly are").row()
   .text("I'm not quite sure").row()
   .text("No. 😈")
-  .resized();InlineKeyboard().url(
-  'Host your own bot for free.',
-  'https://cyclic.sh/'
-);
+  .resized();
 
 // Suggest commands in the menu
 bot.api.setMyCommands([
