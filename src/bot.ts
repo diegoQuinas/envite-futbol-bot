@@ -143,7 +143,10 @@ for (const effect of allEffects) {
 }
 
 // Handle the /about command
-const aboutUrlKeyboard = new InlineKeyboard().url(
+const aboutUrlKeyboard = new Keyboard().text("Yes, they certainly are").row()
+  .text("I'm not quite sure").row()
+  .text("No. 😈")
+  .resized();InlineKeyboard().url(
   'Host your own bot for free.',
   'https://cyclic.sh/'
 );
@@ -163,7 +166,6 @@ const introductionMessage = `Envite Futbol`;
 const replyWithIntro = (ctx: any) =>
   ctx.reply(introductionMessage, {
     reply_markup: aboutUrlKeyboard,
-    parse_mode: 'HTML',
   });
 bot.catch((ctx) => {
   console.log(ctx.message);
